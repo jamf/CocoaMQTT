@@ -138,7 +138,7 @@ protocol CocoaMQTTClient {
 /// MQTT Client
 ///
 /// - Note: GCDAsyncSocket need delegate to extend NSObject
-public class CocoaMQTT: NSObject, CocoaMQTTClient {
+open class CocoaMQTT: NSObject, CocoaMQTTClient {
     
     public weak var delegate: CocoaMQTTDelegate?
     
@@ -365,7 +365,7 @@ public class CocoaMQTT: NSObject, CocoaMQTTClient {
     /// - Returns:
     ///   - Bool: It indicates whether successfully calling socket connect function.
     ///           Not yet established correct MQTT session
-    public func connect(timeout: TimeInterval) -> Bool {
+    open func connect(timeout: TimeInterval) -> Bool {
         socket.setDelegate(self, delegateQueue: delegateQueue)
         reader = CocoaMQTTReader(socket: socket, delegate: self)
         do {
@@ -392,7 +392,7 @@ public class CocoaMQTT: NSObject, CocoaMQTTClient {
     /// - Note: Only can be called from outside.
     ///         If you want to disconnect from inside framwork, call internal_disconnect()
     ///         disconnect expectedly
-    public func disconnect() {
+    open func disconnect() {
         is_internal_disconnected = false
         internal_disconnect()
     }
@@ -437,7 +437,7 @@ public class CocoaMQTT: NSObject, CocoaMQTTClient {
     /// - Parameters:
     ///   - message: Message
     @discardableResult
-    public func publish(_ message: CocoaMQTTMessage) -> Int {
+    open func publish(_ message: CocoaMQTTMessage) -> Int {
         let msgid: UInt16
         
         if message.qos == .qos0 {
@@ -481,7 +481,7 @@ public class CocoaMQTT: NSObject, CocoaMQTTClient {
     ///
     /// - Parameters:
     ///   - topics: A list of tuples presented by `(<Topic Names>/<Topic Filters>, Qos)`
-    public func subscribe(_ topics: [(String, CocoaMQTTQoS)]) {
+    open func subscribe(_ topics: [(String, CocoaMQTTQoS)]) {
         let msgid = nextMessageID()
         let frame = FrameSubscribe(msgid: msgid, topics: topics)
         send(frame, tag: Int(msgid))
