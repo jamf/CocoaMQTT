@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "CocoaAsyncSocket",
-        "repositoryURL": "https://github.com/cyrusingraham/CocoaAsyncSocket.git",
+        "repositoryURL": "https://github.com/robbiehanson/CocoaAsyncSocket.git",
         "state": {
-          "branch": "Add-ALPN-support",
-          "revision": "47dea82d56bae12afeee393c90ddb48970c87adc",
+          "branch": "master",
+          "revision": "72e0fa9e62d56e5bbb3f67e9cfd5aa85841735bc",
           "version": null
         }
       },

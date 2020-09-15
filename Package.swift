@@ -16,8 +16,8 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/cyrusingraham/CocoaAsyncSocket.git",
-            .branch("Add-ALPN-support")
+            url: "https://github.com/robbiehanson/CocoaAsyncSocket.git",
+            .branch("master")
         ),
         .package(url: "https://github.com/daltoniam/Starscream.git", from: "3.0.2"),
     ],

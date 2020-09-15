@@ -1,2 +1,2 @@
-github "Jamf/CocoaAsyncSocket" "alpn"
+github "robbiehanson/CocoaAsyncSocket" "master"
 github "daltoniam/Starscream" "3.0.2"
