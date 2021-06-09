@@ -64,7 +64,7 @@ public enum CocoaMQTTError: Error {
     case writeTimeout
 }
 
-@available(macOS 10.15, *)
+@available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public enum CocoaMQTTURLSessionWebSocketError: Error {
     case closed(URLSessionWebSocketTask.CloseCode)
 }
